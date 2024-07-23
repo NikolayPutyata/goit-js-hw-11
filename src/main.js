@@ -5,11 +5,13 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.form');
+const loader = document.querySelector('.loader');
 
 form.addEventListener('submit', searchImagesFu);
 
 function searchImagesFu(event) {
   event.preventDefault();
+
   const inputUserText = form.elements[0].value.trim();
 
   if (inputUserText === '') {
@@ -18,6 +20,7 @@ function searchImagesFu(event) {
       message: 'Enter some text!',
     });
   } else {
+    loader.style.display = 'block';
     const options = {
       key: '45056360-0d73312e4ecad0bc63c18ca30',
       q: form.elements[0].value.trim(),
@@ -25,14 +28,15 @@ function searchImagesFu(event) {
       orientation: 'horizontal',
       safesearch: true,
     };
-
     createHttpRequest(options)
       .then(data => {
+        loader.style.display = 'none';
         if (data) {
           addImagesToHtml(data.hits);
         }
       })
       .catch(error => {
+        loader.style.display = 'none';
         console.error('Error fetching images:', error);
       });
   }

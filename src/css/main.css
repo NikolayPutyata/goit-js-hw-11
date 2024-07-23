@@ -100,15 +100,14 @@ body {
   height: 200px;
   transition: transform 0.3s ease;
 }
-
 .loader {
+  display: none;
   width: 48px;
   height: 48px;
   border-radius: 50%;
   position: relative;
   animation: rotate 1s linear infinite;
 }
-
 .loader::before {
   content: '';
   box-sizing: border-box;

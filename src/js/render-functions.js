@@ -3,7 +3,6 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export default function addImagesToHtml(images) {
   const gallery = document.querySelector('.gallery');
-
   gallery.innerHTML = '';
 
   const imagesHtml = images
@@ -25,7 +24,6 @@ export default function addImagesToHtml(images) {
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', imagesHtml);
-
   const ligthBox = new SimpleLightbox('.gallery li a', {
     captions: true,
     captionsData: 'alt',
