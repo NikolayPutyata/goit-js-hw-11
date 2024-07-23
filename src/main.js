@@ -12,7 +12,7 @@ form.addEventListener('submit', searchImagesFu);
 function searchImagesFu(event) {
   event.preventDefault();
 
-  let inputUserText = form.elements[0].value.trim();
+  const inputUserText = form.elements[0].value.trim();
 
   if (inputUserText === '') {
     iziToast.error({
