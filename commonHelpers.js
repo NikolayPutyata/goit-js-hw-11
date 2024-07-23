@@ -5,10 +5,10 @@ import{i as l,S as u}from"./assets/vendor-8c59ed88.js";(function(){const s=docum
     <p class="description-img">Views</p>
     <p class="description-img">Comments</p>
     <p class="description-img">Downloads</p>
-    <span class="description-value">${e.likes}</span
-    ><span class="description-value">${e.views}</span
-    ><span class="description-value">${e.comments}</span
-    ><span class="description-value">${e.downloads}</span>
+    <span class="description-value">${e.likes}</span>
+    <span class="description-value">${e.views}</span>
+    <span class="description-value">${e.comments}</span>
+    <span class="description-value">${e.downloads}</span>
   </div>
 </li>`).join("");s.insertAdjacentHTML("beforeend",o),new u(".gallery li a",{captions:!0,captionsData:"alt",captionPosition:"bottom",captionDelay:250}).refresh()}const i=document.querySelector(".form"),c=document.querySelector(".loader");i.addEventListener("submit",m);function m(n){if(n.preventDefault(),i.elements[0].value.trim()==="")l.error({title:"",message:"Enter some text!"});else{c.style.display="block";const o={key:"45056360-0d73312e4ecad0bc63c18ca30",q:i.elements[0].value.trim(),image_type:"photo",orientation:"horizontal",safesearch:!0};p(o).then(t=>{c.style.display="none",t&&d(t.hits)}).catch(t=>{c.style.display="none",console.error("Error fetching images:",t)}),i.elements[0].value=""}}
 //# sourceMappingURL=commonHelpers.js.map
