@@ -14,22 +14,23 @@ export default function addImagesToHtml(images) {
     <p class="description-img">Views</p>
     <p class="description-img">Comments</p>
     <p class="description-img">Downloads</p>
-    <span class="description-value">${image.likes}</span
-    ><span class="description-value">${image.views}</span
-    ><span class="description-value">${image.comments}</span
-    ><span class="description-value">${image.downloads}</span>
+    <span class="description-value">${image.likes}</span>
+    <span class="description-value">${image.views}</span>
+    <span class="description-value">${image.comments}</span>
+    <span class="description-value">${image.downloads}</span>
   </div>
 </li>`;
     })
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', imagesHtml);
-  const ligthBox = new SimpleLightbox('.gallery li a', {
+
+  const lightBox = new SimpleLightbox('.gallery li a', {
     captions: true,
     captionsData: 'alt',
     captionPosition: 'bottom',
     captionDelay: 250,
   });
 
-  ligthBox.refresh();
+  lightBox.refresh();
 }
