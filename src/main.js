@@ -6,6 +6,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.form');
 const loader = document.querySelector('.loader');
+const gallery = document.querySelector('.gallery');
 
 form.addEventListener('submit', searchImagesFu);
 
@@ -34,6 +35,7 @@ function searchImagesFu(event) {
         loader.style.display = 'none';
 
         if (data.hits.length === 0) {
+          gallery.innerHTML = '';
           iziToast.error({
             title: '',
             message: 'No pictures found! Try again!',
