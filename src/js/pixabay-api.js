@@ -1,6 +1,3 @@
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
-
 export default function createHttpRequest(options) {
   const queryString = new URLSearchParams(options).toString();
   const url = `https://pixabay.com/api/?${queryString}`;

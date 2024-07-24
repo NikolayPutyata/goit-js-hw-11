@@ -35,7 +35,7 @@ function searchImagesFu(event) {
         if (data.hits.length === 0) {
           iziToast.error({
             title: '',
-            message: 'No pictures found!',
+            message: 'No pictures found! Try again!',
           });
           form.elements[0].value = '';
         } else {
