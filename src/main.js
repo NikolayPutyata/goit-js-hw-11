@@ -32,6 +32,7 @@ function searchImagesFu(event) {
     createHttpRequest(options)
       .then(data => {
         loader.style.display = 'none';
+
         if (data.hits.length === 0) {
           iziToast.error({
             title: '',

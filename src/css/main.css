@@ -99,6 +99,9 @@ body {
 .item-ul img {
   width: 360px;
   height: 200px;
+}
+.item-ul:hover {
+  transform: scale(1.02);
   transition: transform 0.3s ease;
 }
 .loader {
