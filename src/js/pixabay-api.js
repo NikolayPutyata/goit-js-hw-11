@@ -13,16 +13,7 @@ export default function createHttpRequest(options) {
       return response.json();
     })
     .then(data => {
-      if (data.hits.length === 0) {
-        iziToast.error({
-          title: '',
-          message:
-            'Sorry, there are no images matching your search query. Please try again!',
-        });
-        return null;
-      } else {
-        return data;
-      }
+      return data;
     })
     .catch(error => {
       throw error;

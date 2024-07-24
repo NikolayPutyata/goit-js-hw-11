@@ -14,10 +14,10 @@ function searchImagesFu(event) {
 
   const inputUserText = form.elements[0].value.trim();
 
-  if (inputUserText === '') {
+  if (inputUserText === '' || inputUserText.length < 3) {
     iziToast.error({
       title: '',
-      message: 'Enter some text!',
+      message: 'The input field is empty or has less than three characters!',
     });
   } else {
     loader.style.display = 'block';
@@ -32,14 +32,23 @@ function searchImagesFu(event) {
     createHttpRequest(options)
       .then(data => {
         loader.style.display = 'none';
-        if (data) {
+        if (data.hits.length === 0) {
+          iziToast.error({
+            title: '',
+            message: 'No pictures found!',
+          });
+          form.elements[0].value = '';
+        } else {
           addImagesToHtml(data.hits);
+          form.elements[0].value = '';
         }
       })
       .catch(error => {
         loader.style.display = 'none';
-        console.error('Error fetching images:', error);
+        iziToast.error({
+          title: '',
+          message: `Error fetching images:${error}`,
+        });
       });
-    form.elements[0].value = '';
   }
 }
