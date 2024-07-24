@@ -49,6 +49,6 @@ function searchImagesFu(event) {
           message: `Error fetching images:${error}`,
         });
       })
-      .finally(() => (form.elements[0].value = ''));
+      .finally(() => form.reset());
   }
 }
