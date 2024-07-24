@@ -38,10 +38,8 @@ function searchImagesFu(event) {
             title: '',
             message: 'No pictures found! Try again!',
           });
-          form.elements[0].value = '';
         } else {
           addImagesToHtml(data.hits);
-          form.elements[0].value = '';
         }
       })
       .catch(error => {
@@ -50,6 +48,7 @@ function searchImagesFu(event) {
           title: '',
           message: `Error fetching images:${error}`,
         });
-      });
+      })
+      .finally(() => (form.elements[0].value = ''));
   }
 }
